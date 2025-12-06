@@ -1,94 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Videy Player</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Videy Player Mock</title>
 
-    <!-- Plyr CSS -->
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+<!-- Plyr CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.css" />
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0e0e0e;
-            color: white;
-        }
+<style>
+    body {
+        margin: 0;
+        background: #0d0d0d;
+        font-family: Arial, sans-serif;
+        color: #fff;
+    }
 
-        .header {
-            padding: 18px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #111;
-            border-bottom: 1px solid #222;
-        }
+    .header {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        background: #111;
+        border-bottom: 1px solid #222;
+    }
 
-        .logo {
-            font-size: 21px;
-            font-weight: 700;
-        }
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
 
-        .logo span {
-            color: #4ea3ff;
-        }
+    .logo span {
+        color: #4aa3ff;
+    }
 
-        .download-btn {
-            padding: 10px 20px;
-            background: #1e90ff;
-            border-radius: 12px;
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-        }
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 15px;
+    }
 
-        .container {
-            padding: 20px;
-        }
+    .download-btn {
+        display: block;
+        text-align: center;
+        background: #4aa3ff;
+        color: #000;
+        padding: 14px;
+        margin-top: 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+    }
 
-        .player-wrapper {
-            background: #1a1a1a;
-            padding: 12px;
-            border-radius: 16px;
-        }
-
-        .footer {
-            margin-top: 60px;
-            text-align: center;
-            color: #777;
-            font-size: 13px;
-        }
-    </style>
+    .download-btn:hover {
+        background: #6bc1ff;
+    }
+</style>
 </head>
 
 <body>
 
-    <div class="header">
-        <div class="logo">videy<span>.mock</span></div>
-        <a href="https://www.effectivegatecpm.com/a38yun6ynu?key=6f5ba0654b6d17d95615dd3fc114a0bc" class="download-btn">Download</a>
-    </div>
+<div class="header">
+    <div class="logo">videy<span>.player</span></div>
+</div>
 
-    <div class="container">
-        <div class="player-wrapper">
-            <!-- Video Player -->
-            <video id="player" playsinline controls>
-                <!-- Ganti URL video ini -->
-                <source src="#" type="video/mp4" />
-            </video>
-        </div>
-    </div>
+<div class="container">
 
-    <div class="footer">
-        © 2025 Your Videy Mock — Powered by GitHub Pages
-    </div>
+    <!-- VIDEO PLAYER -->
+    <video id="player" playsinline controls>
+        <source src="https://videy.co/v/?id=pMzRPhSN1&utm_source=copy&utm_medium=organic" type="video/mp4" />
+    </video>
 
-    <!-- Plyr Script -->
-    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-    <script>
-        const player = new Plyr('#player');
-    </script>
+    <!-- DOWNLOAD BUTTON (AMAN) -->
+    <a 
+        href="#" 
+        class="download-btn">
+        Download Video
+    </a>
+
+</div>
+
+<!-- Plyr JS -->
+<script src="https://cdn.jsdelivr.net/npm/plyr@3/dist/plyr.polyfilled.js"></script>
+
+<script>
+    const player = new Plyr('#player', {
+        ratio: "16:9",
+        autoplay: false,
+        controls: [
+            'play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'
+        ],
+    });
+</script>
 
 </body>
-  </html>
-  
+    </html>
+    
